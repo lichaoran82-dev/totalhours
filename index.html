@@ -15,7 +15,11 @@
         </div>
         <div class="controls">
           <div class="control">
-            <label for="weekSelect">Week</label>
+            <label for="sourceSelect">Population</label>
+            <select id="sourceSelect"></select>
+          </div>
+          <div class="control">
+            <label for="weekSelect">Period</label>
             <select id="weekSelect"></select>
           </div>
           <div class="control">
@@ -80,6 +84,32 @@
 
         <article class="panel wide">
           <div class="panel-head">
+            <h2>Monthly Summary</h2>
+            <span id="monthlyTotal"></span>
+          </div>
+          <div class="monthly-layout">
+            <div class="chart monthly-chart" id="monthlyChart" aria-label="Monthly summary chart"></div>
+            <div class="table-wrap compact">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Total</th>
+                    <th>Overtime</th>
+                    <th>OT %</th>
+                    <th>Attendance</th>
+                    <th>MoM</th>
+                    <th>YoY</th>
+                  </tr>
+                </thead>
+                <tbody id="monthlyRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
             <h2>Employee Detail</h2>
             <span id="weekRange"></span>
           </div>
@@ -90,6 +120,7 @@
                   <th>Employee</th>
                   <th>Warehouse</th>
                   <th>Rule</th>
+                  <th>Type</th>
                   <th>Total</th>
                   <th>Regular</th>
                   <th>OT 1.5x</th>

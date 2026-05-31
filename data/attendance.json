@@ -1,54 +1,443 @@
 {
   "company": "Discovery SCM",
-  "generatedAt": "2026-05-31T20:00:00-07:00",
+  "generatedAt": "2026-05-31T11:06:48-07:00",
   "workweekStartsOn": "Monday",
   "warehouses": [
-    { "id": "TX001", "name": "Texas Warehouse" },
-    { "id": "GA006", "name": "Georgia Warehouse" }
+    {
+      "id": "TX001",
+      "name": "Texas Warehouse"
+    }
   ],
   "weeks": [
     {
-      "weekStart": "2026-05-04",
-      "weekEnd": "2026-05-10",
+      "weekStart": "2026-01-26",
+      "weekEnd": "2026-02-08",
       "employees": [
-        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 38, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1100, "alerts": 1, "daysPresent": 5 },
-        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 2, "dt2Hours": 0, "grossPay": 1012, "alerts": 0, "daysPresent": 5 },
-        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 36, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 792, "alerts": 0, "daysPresent": 5 },
-        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 5, "dt2Hours": 0, "grossPay": 1065, "alerts": 0, "daysPresent": 6 },
-        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 37, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 814, "alerts": 0, "daysPresent": 5 }
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 103.77,
+          "ot15Hours": 23.82,
+          "dt2Hours": 0,
+          "totalHours": 127.59,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        }
       ]
     },
     {
-      "weekStart": "2026-05-11",
+      "weekStart": "2026-02-09",
+      "weekEnd": "2026-02-22",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 101.32,
+          "ot15Hours": 18.95,
+          "dt2Hours": 0,
+          "totalHours": 120.27,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 56.0,
+          "ot15Hours": 1.93,
+          "dt2Hours": 0,
+          "totalHours": 57.93,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 5
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-02-23",
+      "weekEnd": "2026-03-08",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 87.98,
+          "ot15Hours": 18.55,
+          "dt2Hours": 0,
+          "totalHours": 106.53,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 87.95,
+          "ot15Hours": 18.13,
+          "dt2Hours": 0,
+          "totalHours": 106.08,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 82.45,
+          "ot15Hours": 48.08,
+          "dt2Hours": 0,
+          "totalHours": 130.53,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-03-09",
+      "weekEnd": "2026-03-22",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 104.0,
+          "ot15Hours": 35.08,
+          "dt2Hours": 0,
+          "totalHours": 139.08,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 104.0,
+          "ot15Hours": 18.28,
+          "dt2Hours": 0,
+          "totalHours": 122.28,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 110.85,
+          "ot15Hours": 35.15,
+          "dt2Hours": 0,
+          "totalHours": 146.0,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-03-23",
+      "weekEnd": "2026-04-05",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 104.0,
+          "ot15Hours": 37.4,
+          "dt2Hours": 0,
+          "totalHours": 141.4,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 83.32,
+          "ot15Hours": 33.92,
+          "dt2Hours": 0,
+          "totalHours": 117.23,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 94.95,
+          "ot15Hours": 26.78,
+          "dt2Hours": 0,
+          "totalHours": 121.73,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 9
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 70.95,
+          "ot15Hours": 19.0,
+          "dt2Hours": 0,
+          "totalHours": 89.95,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 9
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-04-06",
+      "weekEnd": "2026-04-19",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 72.0,
+          "ot15Hours": 24.52,
+          "dt2Hours": 0,
+          "totalHours": 96.52,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 9
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 16.42,
+          "dt2Hours": 0,
+          "totalHours": 96.42,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 76.05,
+          "ot15Hours": 13.12,
+          "dt2Hours": 0,
+          "totalHours": 89.17,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "JIALONG_LI_CA_RULES",
+          "name": "Jialong Li （CA Rules) 加州报税",
+          "warehouse": "TX001",
+          "ruleState": "CA",
+          "regularHours": 76.68,
+          "ot15Hours": 15.53,
+          "dt2Hours": 30.72,
+          "totalHours": 92.22,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-04-20",
+      "weekEnd": "2026-05-03",
+      "employees": [
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 27.75,
+          "dt2Hours": 0,
+          "totalHours": 107.75,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 26.35,
+          "dt2Hours": 0,
+          "totalHours": 106.35,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 32.52,
+          "dt2Hours": 0,
+          "totalHours": 112.52,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "JIALONG_LI",
+          "name": "Jialong Li",
+          "warehouse": "TX001",
+          "ruleState": "CA",
+          "regularHours": 80.0,
+          "ot15Hours": 47.47,
+          "dt2Hours": 3.15,
+          "totalHours": 130.62,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 13
+        }
+      ]
+    },
+    {
+      "weekStart": "2026-05-04",
       "weekEnd": "2026-05-17",
       "employees": [
-        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 40, "ot15Hours": 6, "dt2Hours": 1, "grossPay": 1275, "alerts": 2, "daysPresent": 6 },
-        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 39, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 858, "alerts": 0, "daysPresent": 5 },
-        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 5, "dt2Hours": 0, "grossPay": 1045, "alerts": 0, "daysPresent": 6 },
-        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 6, "dt2Hours": 0, "grossPay": 1098, "alerts": 0, "daysPresent": 6 },
-        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 38, "ot15Hours": 1, "dt2Hours": 0, "grossPay": 869, "alerts": 0, "daysPresent": 5 }
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 10.9,
+          "dt2Hours": 0,
+          "totalHours": 90.9,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 10
+        },
+        {
+          "id": "MERRISSA_ORTEGON",
+          "name": "Merrissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 18.23,
+          "dt2Hours": 0,
+          "totalHours": 98.23,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 80.0,
+          "ot15Hours": 18.22,
+          "dt2Hours": 0,
+          "totalHours": 98.22,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 11
+        },
+        {
+          "id": "JIALONG_LI",
+          "name": "Jialong Li",
+          "warehouse": "TX001",
+          "ruleState": "CA",
+          "regularHours": 80.0,
+          "ot15Hours": 37.78,
+          "dt2Hours": 1.33,
+          "totalHours": 119.12,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 13
+        }
       ]
     },
     {
       "weekStart": "2026-05-18",
-      "weekEnd": "2026-05-24",
-      "employees": [
-        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 40, "ot15Hours": 8, "dt2Hours": 2, "grossPay": 1450, "alerts": 2, "daysPresent": 6 },
-        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 7, "dt2Hours": 0, "grossPay": 1111, "alerts": 0, "daysPresent": 6 },
-        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 34, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 748, "alerts": 0, "daysPresent": 4 },
-        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1032, "alerts": 0, "daysPresent": 5 },
-        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 39, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 858, "alerts": 0, "daysPresent": 5 }
-      ]
-    },
-    {
-      "weekStart": "2026-05-25",
       "weekEnd": "2026-05-31",
       "employees": [
-        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 39, "ot15Hours": 5, "dt2Hours": 1, "grossPay": 1225, "alerts": 1, "daysPresent": 5 },
-        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1012, "alerts": 0, "daysPresent": 5 },
-        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 2, "dt2Hours": 0, "grossPay": 946, "alerts": 0, "daysPresent": 5 },
-        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 3, "dt2Hours": 0, "grossPay": 999, "alerts": 0, "daysPresent": 5 },
-        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 37, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 814, "alerts": 0, "daysPresent": 5 }
+        {
+          "id": "DALIA_POSADA",
+          "name": "Dalia Posada",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 57.9,
+          "ot15Hours": 1.72,
+          "dt2Hours": 0,
+          "totalHours": 59.62,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 6
+        },
+        {
+          "id": "MERISSA_ORTEGON",
+          "name": "Merissa Ortegon",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 57.53,
+          "ot15Hours": 7.33,
+          "dt2Hours": 0,
+          "totalHours": 64.87,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 7
+        },
+        {
+          "id": "LIN_GAO",
+          "name": "Lin Gao",
+          "warehouse": "TX001",
+          "ruleState": "TX",
+          "regularHours": 52.33,
+          "ot15Hours": 27.42,
+          "dt2Hours": 0,
+          "totalHours": 79.75,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 6
+        },
+        {
+          "id": "JIALONG_LI",
+          "name": "Jialong Li",
+          "warehouse": "TX001",
+          "ruleState": "CA",
+          "regularHours": 48.0,
+          "ot15Hours": 30.62,
+          "dt2Hours": 0.58,
+          "totalHours": 79.2,
+          "grossPay": 0,
+          "alerts": 0,
+          "daysPresent": 7
+        }
       ]
     }
   ]

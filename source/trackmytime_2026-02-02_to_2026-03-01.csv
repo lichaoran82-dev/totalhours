@@ -1,0 +1,33 @@
+Timecard Report - DISCOVERY SCM USA LTD
+02/02/2026-03/01/2026
+Departments :All_Departments-TOTAL HOURS
+
+"EMPLOYEE NAME","EMPLOYEE PAYROLL ID","FIRST NAME","LAST NAME","DEPARTMENT NAME","REG","OT1","OT2","VAC","HOL","SIC","OTH","TOTAL"
+"Elias  Mina","","Elias"," Mina","SCM-TX001","8.97","","","","","","","8.97"
+"Fabian Arteaga","","Fabian","Arteaga","SCM-TX001","47.98","5.13","7.00","","","","","60.12"
+"Rafael Avila","","Rafael","Avila","SCM-TX001","7.65","","","","","","","7.65"
+"Yan Brinez","","Yan","Brinez","SCM-TX001","8.55","","","","","","","8.55"
+"Junjie Fan","","Junjie","Fan","SCM-TX001","160.00","117.17","","","","","","277.17"
+"LIN GAO","","LIN","GAO","SCM-TX001","141.47","54.72","18.68","","","","","214.87"
+"Isabel  Gonzalez","","Isabel ","Gonzalez","SCM-TX001","9.22","","","","","","","9.22"
+"Chaoran Li","","Chaoran","Li","SCM-TX001","136.32","25.10","","","","","","161.42"
+"JIALONG LI","","JIALONG","LI","SCM-TX001","159.52","72.03","18.10","","","","","249.65"
+"Jabier Lopez","","Jabier","Lopez","SCM-TX001","60.37","2.03","","","","","","62.40"
+"Jose Martin","","Jose","Martin","SCM-TX001","160.00","66.73","","","","","","226.73"
+"Daniel  Martinez","","Daniel ","Martinez","SCM-TX001","7.88","","","","","","","7.88"
+"Katerin Martinez","","Katerin","Martinez","SCM-TX001","18.67","","","","","","","18.67"
+"Manuel Mendoza","","Manuel","Mendoza","SCM-TX001","15.75","","","","","","","15.75"
+"Gerson  Orlando ","","Gerson ","Orlando ","SCM-TX001","159.77","59.48","4.68","","","","","223.93"
+"Merrissa  Ortegon","","Merrissa ","Ortegon","SCM-TX001","159.07","41.10","","","","","","200.17"
+"Rolando  Padilla Fernandez","","Rolando ","Padilla Fernandez","SCM-TX001","160.00","43.00","","","","","","203.00"
+"Eumar  padron","","Eumar ","padron","SCM-TX001","159.80","25.20","","","","","","185.00"
+"Omar  Padron","","Omar ","Padron","SCM-TX001","160.00","24.83","","","","","","184.83"
+"Dalia  Posada","","Dalia ","Posada","SCM-TX001","148.00","26.07","","","","","","174.07"
+"Rondon Ricardo","","Rondon","Ricardo","SCM-TX001","159.80","35.28","2.63","","","","","197.72"
+"Wilmer Robert","","Wilmer","Robert","SCM-TX001","90.43","24.38","","","","","","114.82"
+"Glenda Rodiguez","","Glenda","Rodiguez","SCM-TX001","102.37","16.97","","","","","","119.33"
+"David Rodriguez","","David","Rodriguez","SCM-TX001","120.00","16.97","","","","","","136.97"
+"Garcia   Roman","","Garcia  ","Roman","SCM-TX001","-4.15","117.33","","","","","","113.18"
+"Xiaoyan Yin","","Xiaoyan","Yin","SCM-TX001","160.00","117.63","","","","","","277.63"
+
+"TOTAL","","","","","2517.42","891.17","51.10","","","","","3459.68"

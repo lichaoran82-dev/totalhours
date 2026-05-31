@@ -5,7 +5,18 @@ const fmtPercent = new Intl.NumberFormat("en-US", { style: "percent", maximumFra
 const el = (id) => document.getElementById(id);
 
 function employeeTotal(employee) {
-  return employee.regularHours + employee.ot15Hours + employee.dt2Hours;
+  return typeof employee.totalHours === "number"
+    ? employee.totalHours
+    : employee.regularHours + employee.ot15Hours + employee.dt2Hours;
+}
+
+function employeeKey(employee) {
+  return employee.name
+    .replace(/\s*[\(（].*?[\)）]/g, "")
+    .replace(/\bmerrissa\b/i, "merissa")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
 }
 
 function filterWeek(week, warehouse) {
@@ -14,6 +25,39 @@ function filterWeek(week, warehouse) {
     ...week,
     employees: week.employees.filter((employee) => employee.warehouse === warehouse)
   };
+}
+
+function filterDataByEmployeeType(data, type, sourceName) {
+  return {
+    ...data,
+    sourceName,
+    weeks: data.weeks.map((week) => ({
+      ...week,
+      employees: week.employees.filter((employee) => (employee.employeeType || "W2") === type)
+    }))
+  };
+}
+
+function buildSources(w2Data, trackmytimeData) {
+  const sources = [];
+  if (trackmytimeData) {
+    sources.push({
+      id: "trackmytimeAll",
+      name: "All TrackMyTime",
+      data: trackmytimeData
+    });
+    sources.push({
+      id: "trackmytimeStaffing",
+      name: "Staffing/Temp Only",
+      data: filterDataByEmployeeType(trackmytimeData, "Staffing/Temp", "Staffing/Temp Only")
+    });
+  }
+  sources.push({
+    id: "w2Payroll",
+    name: "W2 Payroll Sheet",
+    data: { ...w2Data, sourceName: "W2 Payroll Sheet" }
+  });
+  return sources;
 }
 
 function weekTotals(week) {
@@ -35,6 +79,43 @@ function weekTotals(week) {
   };
 }
 
+function monthLabel(key) {
+  const [year, month] = key.split("-");
+  return new Date(Number(year), Number(month) - 1).toLocaleString("en-US", {
+    month: "short",
+    year: "numeric"
+  });
+}
+
+function monthlyTotals(weeks, warehouse) {
+  const months = new Map();
+  weeks.map((week) => filterWeek(week, warehouse)).forEach((week) => {
+    const month = week.weekEnd.slice(0, 7);
+    if (!months.has(month)) {
+      months.set(month, {
+        month,
+        totalHours: 0,
+        otHours: 0,
+        daysPresent: 0,
+        employeeIds: new Set()
+      });
+    }
+    const row = months.get(month);
+    week.employees.forEach((employee) => {
+      const total = employeeTotal(employee);
+      row.totalHours += total;
+      row.otHours += employee.ot15Hours + employee.dt2Hours;
+      row.daysPresent += employee.daysPresent;
+      if (total > 0) row.employeeIds.add(employeeKey(employee));
+    });
+  });
+  return [...months.values()].sort((a, b) => a.month.localeCompare(b.month)).map((month) => ({
+    ...month,
+    activeEmployees: month.employeeIds.size,
+    otShare: month.totalHours ? month.otHours / month.totalHours : 0
+  }));
+}
+
 function groupHours(employees, key) {
   return employees.reduce((acc, employee) => {
     const name = employee[key] || "Unknown";
@@ -46,6 +127,12 @@ function groupHours(employees, key) {
 function delta(current, previous) {
   if (!previous) return 0;
   return previous === 0 ? 0 : (current - previous) / previous;
+}
+
+function formatDelta(value) {
+  if (value === null || value === undefined) return "n/a";
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${fmtPercent.format(value)}`;
 }
 
 function setDelta(node, value) {
@@ -61,7 +148,9 @@ function renderKpis(week, previous) {
   el("otHours").textContent = fmtNumber.format(current.otHours);
   el("otShare").textContent = fmtPercent.format(current.otShare);
   el("activeEmployees").textContent = current.activeEmployees;
-  el("daysPresent").textContent = `${current.daysPresent} presence days`;
+  el("daysPresent").textContent = current.daysPresent
+    ? `${current.daysPresent} presence days`
+    : "period summary";
   el("alerts").textContent = current.alerts;
   el("weekRange").textContent = `${week.weekStart} to ${week.weekEnd}`;
   setDelta(el("totalHoursDelta"), delta(current.totalHours, prior?.totalHours || 0));
@@ -88,6 +177,43 @@ function renderTrend(weeks, warehouse) {
         </div>
         <div class="bar-label">${week.weekStart.slice(5)}</div>
       </div>
+    `;
+  }).join("");
+}
+
+function renderMonthly(weeks, warehouse) {
+  const months = monthlyTotals(weeks, warehouse);
+  const maxHours = Math.max(...months.map((month) => month.totalHours), 1);
+  const grandTotal = months.reduce((sum, month) => sum + month.totalHours, 0);
+  el("monthlyTotal").textContent = `${fmtNumber.format(grandTotal)} hours`;
+  el("monthlyChart").innerHTML = months.map((month) => {
+    const totalHeight = Math.max(2, (month.totalHours / maxHours) * 190);
+    const otHeight = Math.max(2, (month.otHours / maxHours) * 190);
+    return `
+      <div class="bar-group">
+        <div class="bars" title="${fmtNumber.format(month.totalHours)} total hours, ${fmtNumber.format(month.otHours)} overtime hours">
+          <span class="bar total" style="height:${totalHeight}px"></span>
+          <span class="bar ot" style="height:${otHeight}px"></span>
+        </div>
+        <div class="bar-label">${month.month.slice(5)}</div>
+      </div>
+    `;
+  }).join("");
+  el("monthlyRows").innerHTML = months.map((month, index) => {
+    const previous = months[index - 1];
+    const lastYear = months.find((candidate) => candidate.month === `${Number(month.month.slice(0, 4)) - 1}${month.month.slice(4)}`);
+    const mom = previous ? delta(month.totalHours, previous.totalHours) : null;
+    const yoy = lastYear ? delta(month.totalHours, lastYear.totalHours) : null;
+    return `
+      <tr>
+        <td>${monthLabel(month.month)}</td>
+        <td>${fmtNumber.format(month.totalHours)}</td>
+        <td>${fmtNumber.format(month.otHours)}</td>
+        <td>${fmtPercent.format(month.otShare)}</td>
+        <td>${month.activeEmployees}</td>
+        <td class="${mom === null ? "" : mom >= 0 ? "up" : "down"}">${formatDelta(mom)}</td>
+        <td class="${yoy === null ? "" : yoy >= 0 ? "up" : "down"}">${formatDelta(yoy)}</td>
+      </tr>
     `;
   }).join("");
 }
@@ -123,6 +249,7 @@ function renderEmployees(week) {
           <td>${employee.name}</td>
           <td>${employee.warehouse}</td>
           <td><span class="pill ${employee.ruleState.toLowerCase()}">${employee.ruleState}</span></td>
+          <td>${employee.employeeType || "W2"}</td>
           <td>${fmtNumber.format(total)}</td>
           <td>${fmtNumber.format(employee.regularHours)}</td>
           <td>${fmtNumber.format(employee.ot15Hours)}</td>
@@ -143,26 +270,48 @@ function render(data) {
   const previous = weekIndex > 0 ? filterWeek(data.weeks[weekIndex - 1], warehouse) : null;
 
   el("company").textContent = data.company;
-  el("generatedAt").textContent = `Updated ${new Date(data.generatedAt).toLocaleString()}`;
+  el("generatedAt").textContent = `${data.sourceName || "Dashboard"} · Updated ${new Date(data.generatedAt).toLocaleString()}`;
   renderKpis(week, previous);
   renderTrend(data.weeks, warehouse);
+  renderMonthly(data.weeks, warehouse);
   renderSplit("warehouseSplit", "warehouseTotal", week.employees, "warehouse");
   renderSplit("ruleSplit", "ruleTotal", week.employees, "ruleState");
   renderEmployees(week);
 }
 
-async function main() {
-  const response = await fetch("./data/attendance.json");
-  const data = await response.json();
+function populateWeeks(data) {
   const weekSelect = el("weekSelect");
-  const warehouseSelect = el("warehouseSelect");
-
+  weekSelect.innerHTML = "";
   data.weeks.forEach((week, index) => {
     const option = document.createElement("option");
     option.value = index;
     option.textContent = `${week.weekStart} to ${week.weekEnd}`;
     weekSelect.appendChild(option);
   });
+  weekSelect.value = String(data.weeks.length - 1);
+}
+
+async function main() {
+  const [w2Response, trackmytimeResponse] = await Promise.all([
+    fetch("./data/attendance.json"),
+    fetch("./data/trackmytime_attendance.json").catch(() => null)
+  ]);
+  const w2Data = await w2Response.json();
+  const trackmytimeData = trackmytimeResponse?.ok ? await trackmytimeResponse.json() : null;
+  const sources = buildSources(w2Data, trackmytimeData);
+  let data = sources[0].data;
+  const sourceSelect = el("sourceSelect");
+  const weekSelect = el("weekSelect");
+  const warehouseSelect = el("warehouseSelect");
+
+  sources.forEach((source) => {
+    const option = document.createElement("option");
+    option.value = source.id;
+    option.textContent = source.name;
+    sourceSelect.appendChild(option);
+  });
+  sourceSelect.value = sources[0].id;
+  populateWeeks(data);
 
   [{ id: "ALL", name: "All Warehouses" }, ...data.warehouses].forEach((warehouse) => {
     const option = document.createElement("option");
@@ -171,10 +320,14 @@ async function main() {
     warehouseSelect.appendChild(option);
   });
 
-  weekSelect.value = String(data.weeks.length - 1);
   warehouseSelect.value = "ALL";
   weekSelect.addEventListener("change", () => render(data));
   warehouseSelect.addEventListener("change", () => render(data));
+  sourceSelect.addEventListener("change", () => {
+    data = sources.find((source) => source.id === sourceSelect.value).data;
+    populateWeeks(data);
+    render(data);
+  });
   render(data);
 }
 
