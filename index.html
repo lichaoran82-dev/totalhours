@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="company">Attendance</p>
+          <h1>Warehouse Labor Dashboard</h1>
+        </div>
+        <div class="controls">
+          <div class="control">
+            <label for="weekSelect">Week</label>
+            <select id="weekSelect"></select>
+          </div>
+          <div class="control">
+            <label for="warehouseSelect">Warehouse</label>
+            <select id="warehouseSelect"></select>
+          </div>
+        </div>
+      </header>
+
+      <section class="kpis" aria-label="Key metrics">
+        <article class="kpi">
+          <span>Total Hours</span>
+          <strong id="totalHours">0</strong>
+          <small id="totalHoursDelta">0%</small>
+        </article>
+        <article class="kpi">
+          <span>Overtime Hours</span>
+          <strong id="otHours">0</strong>
+          <small id="otHoursDelta">0%</small>
+        </article>
+        <article class="kpi">
+          <span>OT Share</span>
+          <strong id="otShare">0%</strong>
+          <small id="otShareDelta">0 pts</small>
+        </article>
+        <article class="kpi">
+          <span>Attendance</span>
+          <strong id="activeEmployees">0</strong>
+          <small id="daysPresent">0 presence days</small>
+        </article>
+        <article class="kpi attention">
+          <span>Review Alerts</span>
+          <strong id="alerts">0</strong>
+          <small>CA meal/rest checks</small>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="panel trend">
+          <div class="panel-head">
+            <h2>Weekly Trend</h2>
+            <span id="generatedAt"></span>
+          </div>
+          <div class="chart" id="trendChart" aria-label="Weekly trend chart"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Warehouse Split</h2>
+            <span id="warehouseTotal"></span>
+          </div>
+          <div class="split" id="warehouseSplit"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Rule Split</h2>
+            <span id="ruleTotal"></span>
+          </div>
+          <div class="split" id="ruleSplit"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>Employee Detail</h2>
+            <span id="weekRange"></span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Employee</th>
+                  <th>Warehouse</th>
+                  <th>Rule</th>
+                  <th>Total</th>
+                  <th>Regular</th>
+                  <th>OT 1.5x</th>
+                  <th>DT 2x</th>
+                  <th>OT %</th>
+                  <th>Days</th>
+                  <th>Alerts</th>
+                  <th>Gross Pay</th>
+                </tr>
+              </thead>
+              <tbody id="employeeRows"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "company": "Discovery SCM",
+  "generatedAt": "2026-05-31T20:00:00-07:00",
+  "workweekStartsOn": "Monday",
+  "warehouses": [
+    { "id": "TX001", "name": "Texas Warehouse" },
+    { "id": "GA006", "name": "Georgia Warehouse" }
+  ],
+  "weeks": [
+    {
+      "weekStart": "2026-05-04",
+      "weekEnd": "2026-05-10",
+      "employees": [
+        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 38, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1100, "alerts": 1, "daysPresent": 5 },
+        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 2, "dt2Hours": 0, "grossPay": 1012, "alerts": 0, "daysPresent": 5 },
+        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 36, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 792, "alerts": 0, "daysPresent": 5 },
+        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 5, "dt2Hours": 0, "grossPay": 1065, "alerts": 0, "daysPresent": 6 },
+        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 37, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 814, "alerts": 0, "daysPresent": 5 }
+      ]
+    },
+    {
+      "weekStart": "2026-05-11",
+      "weekEnd": "2026-05-17",
+      "employees": [
+        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 40, "ot15Hours": 6, "dt2Hours": 1, "grossPay": 1275, "alerts": 2, "daysPresent": 6 },
+        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 39, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 858, "alerts": 0, "daysPresent": 5 },
+        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 5, "dt2Hours": 0, "grossPay": 1045, "alerts": 0, "daysPresent": 6 },
+        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 6, "dt2Hours": 0, "grossPay": 1098, "alerts": 0, "daysPresent": 6 },
+        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 38, "ot15Hours": 1, "dt2Hours": 0, "grossPay": 869, "alerts": 0, "daysPresent": 5 }
+      ]
+    },
+    {
+      "weekStart": "2026-05-18",
+      "weekEnd": "2026-05-24",
+      "employees": [
+        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 40, "ot15Hours": 8, "dt2Hours": 2, "grossPay": 1450, "alerts": 2, "daysPresent": 6 },
+        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 7, "dt2Hours": 0, "grossPay": 1111, "alerts": 0, "daysPresent": 6 },
+        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 34, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 748, "alerts": 0, "daysPresent": 4 },
+        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1032, "alerts": 0, "daysPresent": 5 },
+        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 39, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 858, "alerts": 0, "daysPresent": 5 }
+      ]
+    },
+    {
+      "weekStart": "2026-05-25",
+      "weekEnd": "2026-05-31",
+      "employees": [
+        { "id": "CA001", "name": "California Rule Employee", "warehouse": "TX001", "ruleState": "CA", "regularHours": 39, "ot15Hours": 5, "dt2Hours": 1, "grossPay": 1225, "alerts": 1, "daysPresent": 5 },
+        { "id": "TX101", "name": "TX001 Employee 1", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 4, "dt2Hours": 0, "grossPay": 1012, "alerts": 0, "daysPresent": 5 },
+        { "id": "TX102", "name": "TX001 Employee 2", "warehouse": "TX001", "ruleState": "TX", "regularHours": 40, "ot15Hours": 2, "dt2Hours": 0, "grossPay": 946, "alerts": 0, "daysPresent": 5 },
+        { "id": "GA601", "name": "GA006 Employee 1", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 40, "ot15Hours": 3, "dt2Hours": 0, "grossPay": 999, "alerts": 0, "daysPresent": 5 },
+        { "id": "GA602", "name": "GA006 Employee 2", "warehouse": "GA006", "ruleState": "FLSA", "regularHours": 37, "ot15Hours": 0, "dt2Hours": 0, "grossPay": 814, "alerts": 0, "daysPresent": 5 }
+      ]
+    }
+  ]
+}
